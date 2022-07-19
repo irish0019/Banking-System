@@ -1,2 +1,1 @@
-
-web: BBS.wsgi
+web: gunicorn BBS.wsgi
