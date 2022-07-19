@@ -1,1 +1,2 @@
-web: gunicorn BBS.wsgi --log-file -
+
+web: BBS.wsgi
