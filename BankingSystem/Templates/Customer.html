@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bank of India</title>
-    <link rel="icon" href="Bank_Logo.png"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">    
+    <link rel="icon" href="Bank_Logo.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <style>
         .text {
             font-size: 25px;
@@ -18,18 +20,18 @@
         a:visited {
             color: blue;
         }
-        h1{
+
+        h1 {
             background-color: darkorchid;
         }
-
     </style>
 </head>
 
 <body>
     <center>
-        <h1>Bank Of India</h1>   
-        <br>     
-        <table border="3" class="table-info"style="width:1000px;">
+        <h1>Bank Of India</h1>
+        <br>
+        <table border="3" class="table-info" style="width:1000px;">
             <tr class="text">
                 <th>Name</th>
                 <th>Account Number</th>
@@ -38,12 +40,15 @@
             {%for i in data%}
             <tr class="text">
                 <td><a href="Customers/{{i.Name}}">{{i.Name}}</a></td>
-                <td>{{i.Account_Number}}</td><td>{{i.Balance}}</td>
+                <td>{{i.Account_Number}}</td>
+                <td>{{i.Balance}}</td>
             </tr>
             {%endfor%}
         </table>
     </center>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

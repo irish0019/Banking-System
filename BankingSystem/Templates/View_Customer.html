@@ -4,7 +4,7 @@
 <head>
     <title>Bank Of India</title>
     <meta charset="utf-8">
-    <link rel="icon" href="Bank_Logo.png"/>
+    <link rel="icon" href="Bank_Logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -49,34 +49,47 @@
                 <h3 class="card-title">Transfer Money</h3>
                 <form action="{% url 'transfer' %}" method="POST">
                     {%csrf_token%}
-                <table style="width: 350px; max-width: 100%;">
-                    <tr><td>From:&nbsp;</td><td><input type="text" name="from" value="{{data.Name}}" readonly="readonly"></td></tr>
-                    <tr><td></td><td><input type="text" value="{{data.Account_Number}}" name="sender" readonly="readonly"></td></tr>
-                    <tr>
-                        <td>Amount:&nbsp;</td>
-                        <td><input autofocus type="text" name="amount" value="" required/></td>
-                    </tr>
-                    <tr>
-                        <td>Beneficiary:&nbsp;</td>
-                        <td><input type="text" list="clients" name="acc_holder" value="" required/></td>
-                    </tr>
-                    <tr><td>Account Number:&nbsp;</td><td><input type="text" list="Acc_NO" name="account"></td></tr>
-                    <tr><td>&nbsp;</td></tr>
-                    <tr>
-                        <td colspan="2"><input id="next" class="btn btn-success"  type="submit" value="Transfer"></td>
-                    </tr>
-                    <datalist id="clients">
-                        {%for i in list%}
+                    <table style="width: 350px; max-width: 100%;">
+                        <tr>
+                            <td>From:&nbsp;</td>
+                            <td><input type="text" name="from" value="{{data.Name}}" readonly="readonly"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="text" value="{{data.Account_Number}}" name="sender" readonly="readonly">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Amount:&nbsp;</td>
+                            <td><input autofocus type="text" name="amount" value="" required /></td>
+                        </tr>
+                        <tr>
+                            <td>Beneficiary:&nbsp;</td>
+                            <td><input type="text" list="clients" name="acc_holder" value="" required /></td>
+                        </tr>
+                        <tr>
+                            <td>Account Number:&nbsp;</td>
+                            <td><input type="text" list="Acc_NO" name="account"></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input id="next" class="btn btn-success" type="submit" value="Transfer">
+                            </td>
+                        </tr>
+                        <datalist id="clients">
+                            {%for i in list%}
                             <option value="{{i.Name}}">
-                        {%endfor%}
-                    </datalist>
-                    <datalist id="Acc_NO">
-                        {%for i in list%}
-                        <option value="{{i.Account_Number}}">
-                        {%endfor%}
-                    </datalist>
-                </table>
-            </form>
+                                {%endfor%}
+                        </datalist>
+                        <datalist id="Acc_NO">
+                            {%for i in list%}
+                            <option value="{{i.Account_Number}}">
+                                {%endfor%}
+                        </datalist>
+                    </table>
+                </form>
             </center>
         </div>
     </div>
